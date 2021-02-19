@@ -26,6 +26,7 @@ demo.state0.prototype = {
         cat.animations.add('walk', [0,1,2,3]);
         game.camera.follow(cat);
         game.camera.deadzone = new Phaser.Rectangle(centerX - 300, 0, 600, 1000);
+        scoreText = game.add.text(16, 16, 'Score: ' + score, {fontSize: '32px', fill: '#000'});
     },
     update: function(){
         dX = 0;
@@ -57,6 +58,7 @@ demo.state0.prototype = {
 }
 
 function changeState(i, stateNum) {
+    console.log('state' + stateNum);
     game.state.start('state' + stateNum);
 }
 
